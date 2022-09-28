@@ -37,4 +37,5 @@ def login():
         return f"Done!!"
  
 # for test with local
-#app.run(host='localhost', port=5000)
+#app.run(host='localhost', port=443)
+app.run(host='check-person-flask2.herokuapp.com', port=443)
