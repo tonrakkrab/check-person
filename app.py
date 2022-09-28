@@ -32,4 +32,4 @@ def login():
         cursor.close()
         return f"Done!!"
  
-app.run(host='localhost', port=5000)
+app.run()
