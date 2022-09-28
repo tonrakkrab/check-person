@@ -14,6 +14,10 @@ app.config['MYSQL_DB'] = 'tevm7fxnw6cl3fyr'
  
 mysql = MySQL(app)
  
+@app.route('/')
+def hello_world():
+    return 'Hello, world! github'
+
 @app.route('/form')
 def form():
     return render_template('form.html')
@@ -32,4 +36,5 @@ def login():
         cursor.close()
         return f"Done!!"
  
-app.run()
+# for test with local
+#app.run(host='localhost', port=5000)
