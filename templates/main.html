@@ -1,0 +1,15 @@
+
+    {% extends 'base.html' %}
+    {% block title %}Welcome{% endblock title %}
+    {% block content %}
+
+    <br/>
+    <div class="msg">{{ msg }}</div>
+    <br/>
+    {% if session.username %}
+    <h3>Welcome {{ session.username }}!</h3>
+    {% else %}
+    <h3>Welcome to Check Person!</h3>
+    {% endif%}
+
+    {% endblock content %}
