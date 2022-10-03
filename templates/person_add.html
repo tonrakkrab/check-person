@@ -63,7 +63,8 @@
             </div>            
             <div class="form-group">
                 <label for="telephone_number">เบอร์โทรศัพท์:</label>
-                <input type="tel" class="form-control" id="telephone_number" name="telephone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter telephone number">
+                <!-- <input type="tel" class="form-control" id="telephone_number" name="telephone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter telephone number"> -->
+                <input type="tel" class="form-control" id="telephone_number" name="telephone_number" pattern="[0-9]{10}" placeholder="Enter telephone number">
             </div>
             
             <div class="form-group">
@@ -81,7 +82,7 @@
                 </select>
             </div>
             
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="origin_date">วันที่เดินทาง จากต้นทาง:</label>
                 <input type="date" class="form-control" id="origin_date" name="origin_date" placeholder="Enter origin date">
             </div>
@@ -89,9 +90,9 @@
             <div class="form-group">
                 <label for="origin_country">ประเทศต้นทาง:</label>
                 <select name="origin_country">
-                    <!-- {% for c in countriesList %}
+                    {% for c in countriesList %}
                         <option value='{{c.country_id}}'>{{c.country_name}}</option>
-                    {% endfor %} -->
+                    {% endfor %}
                 </select>
             </div>
 
@@ -120,7 +121,7 @@
                         <option value='{{c.id}}'>{{c.name_th}}</option>
                     {% endfor %}
                 </select>
-            </div>
+            </div> -->
 
             <!--
             origin_tambon_id INT NULL,
@@ -136,12 +137,12 @@
             destination_date datetime NULL, 
             -->
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="destination_country">ประเทศปลายทาง:</label>
                 <select name="destination_country">
-                    <!-- {% for c in countriesList %}
+                    {% for c in countriesList %}
                         <option value='{{c._country_id}}'>{{c.country_name}}</option>
-                    {% endfor %} -->
+                    {% endfor %}
                 </select>
             </div>
 
@@ -175,7 +176,7 @@
             <div class="form-group">
                 <label for="destination_date">วันที่เดินทาง ถึงปลายทาง:</label>
                 <input type="date" class="form-control" id="destination_date" name="destination_date" placeholder="Enter destination date">
-            </div>
+            </div> -->
 
             <br/>
             <button type="submit" class="btn btn-primary">บันทึกข้อมูล (Save Data)</button>            
