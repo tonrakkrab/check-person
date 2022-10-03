@@ -145,10 +145,16 @@ def person_edit():
         editPerson = cursor.fetchone()
         # if request.method == 'POST' and 'username' in request.form and 'user_id' in request.form and 'role' in request.form and 'country' in request.form :
         if request.method == 'POST' and 'firstname_th' in request.form and 'person_id' in request.form :
-            firstNameTH = request.form['firstname_th']
-            # role = request.form['role']
-            # country = request.form['country']            
+                        
             personId = request.form['person_id']
+
+            identify = request.form['identify']
+            ID_card_photo_path = request.form['ID_card_photo_path']
+            firstname_th = request.form['firstname_th']
+            lastname_th = request.form['lastname_th']
+            telephone_number = request.form['telephone_number']
+
+            trip_type_id = request.form['trip_type']
 
             #cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             # cursor.execute('SELECT * FROM persons WHERE email = % s', (email, ))
@@ -161,13 +167,13 @@ def person_edit():
             #     mesage = 'Please fill out the form !'
             # else:
 
-            if not re.match(r'[A-Za-z0-9]+', firstNameTH):
-                msg = 'name must contain only characters and numbers !'
-            else:
-                cursor.execute('UPDATE persons SET firstname_th =%s WHERE person_id =%s', (firstNameTH, personId) )
-                mysql.connection.commit()
-                msg = 'User updated !'
-                return redirect(url_for('person'))
+            # if not re.match(r'[A-Za-z0-9]+', firstname_th):
+            #     msg = 'name must contain only characters and numbers !'
+            # else:
+            cursor.execute('UPDATE persons SET identify =%s , ID_card_photo_path =%s , firstname_th =%s , lastname_th =%s ,telephone_number =%s ,  trip_type_id =%s WHERE person_id =%s', (identify, ID_card_photo_path, firstname_th, lastname_th ,telephone_number, trip_type_id,personId))
+            mysql.connection.commit()
+            msg = 'User updated !'
+            return redirect(url_for('person'))
         elif request.method == 'POST':
             msg = 'Please fill out the form !'
 
